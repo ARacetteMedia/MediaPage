@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% extends "main_app/base.html" %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Login</title>
+  </head>
+  <body>
+    {% block body-block %}
+    <div class="container">
+
+    <div class="jumbotron">
+      <h1>Please Log in</h1>
+      <form method="post" action="{% url 'main_app:user_login' %}">
+        {% csrf_token %}
+        <label for="username">Username:</label>
+        <input type="text" name="username" placeholder="Enter Username">
+
+        <label for="password"></label>
+        <input type="password" name="password">
+
+        <input type="submit" name="" value="Login">
+      </form>
+    </div>
+  </div>
+    <style media="screen">
+      .jumbotron{
+        text-align: center;
+      }
+    </style>
+    {% endblock %}
+  </body>
+</html>
